@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  postgrres:
+    container_name: psql
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${TYPEORM_USERNAME}
+      POSTGRES_PASSWORD: ${TYPEORM_PASSWORD}
+      POSTGRES_DB: ${TYPEORM_DATABASE}
+      PGDATA: ${TYPEORM_DATA}
+    ports:
+      - ${TYPEORM_PORT}:5432
+    volumes:
+      - '${TYPEORM_PATH}:/var/lib/postgresql/data'
