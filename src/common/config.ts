@@ -18,7 +18,7 @@ export class Config{
             username: this.get('TYPEORM_USERNAME'),
             password: this.get('TYPEORM_PASSWORD'),
             database: this.get('TYPEORM_DATABASE'),
-            entities: ['dist/**/*.entity{.ts,.js}'],
+            entities: ['**/*.entity{.ts,.js}'],
             synchronize: true,
             logging: false,
         };

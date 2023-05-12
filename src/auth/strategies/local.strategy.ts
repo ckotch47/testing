@@ -23,7 +23,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   public async validate(phone: string, password: string): Promise<Users> {
     const user = await this.usersService.findOneByUsername(phone);
 
-    console.log(user)
 
 
     return user;

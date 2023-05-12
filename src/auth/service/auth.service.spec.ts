@@ -68,7 +68,6 @@ describe('AuthService', () => {
             });
 
             const res = authService.signIn(testUser.username, testUser.password);
-            console.log(res);
             await expect(res).rejects.toThrow(UnauthorizedException);
         })
 
